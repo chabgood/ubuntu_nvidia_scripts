@@ -1,7 +1,6 @@
 #!/home/chabgood/.rbenv/shims/ruby
 output = `nvidia-smi --query-gpu=index,power.default_limit --format=csv,noheader`
 
-data = {}
 out = output.split("\n").map{ |n| n.split(',')}.map do |row|
   index, power = *row
   power = power.to_i
